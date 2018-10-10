@@ -1,4 +1,7 @@
 class FilmsController < ApplicationController
+  require 'net/http'
+  require 'json'
+
   def index
   end
 
