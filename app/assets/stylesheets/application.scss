@@ -10,6 +10,31 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+ @import "variables/personal_variables";
+ @import "variables/bootstrap_variables";
+ @import "bootstrap";
+ @import "components/*";
+ @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+
+
+ body {
+   margin-bottom: 600px;
+   height:100%;
+   width:100%;
+   margin:0;
+   padding:0;
+ }
+
+
+ .searchbar {
+   // margin:0 auto;
+   margin: 100px auto 0px auto;
+   padding:0 40px;
+   min-height:100%;
+   height: auto;
+   background: pink;
+ }

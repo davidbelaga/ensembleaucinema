@@ -26,12 +26,14 @@ for n in 0..2 do
     http.request(request)
   end
 
+  jsonresponse = JSON.parse(response.body)
+
   File.open(jsonfiles[n],"w") do |f|
     f.truncate(0)
-    f.write(JSON.pretty_generate(response.body))
+    f.write(JSON.pretty_generate(jsonresponse))
   end
   puts ">>"
   puts "voici la liste des #{uris.keys[n]} "
   puts ">>"
-  puts response.body
+  puts jsonresponse
 end

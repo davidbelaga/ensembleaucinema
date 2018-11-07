@@ -1,0 +1,64 @@
+<div class="searchbar">
+  <div class="searchbar-input">
+    <input id="search-input" placeholder="Trouve ton film" class="form-control">
+  </div>
+  <main>
+    <div id="hits"></div>
+    <div id="pagination"></div>
+  </main>
+  <!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3/dist/instantsearch.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    //do work
+  var search = instantsearch({
+              appId: '0BOKPT0IXQ',
+              apiKey: 'efe51c74e7ff4cff993d4486f584515a', // search only API key, no ADMIN key
+              indexName: 'LondonFilms',
+              urlSync: true,
+              searchParameters: {
+                hitsPerPage: 12
+              },
+            });
+            search.addWidget(
+              instantsearch.widgets.searchBox({
+                container: '#search-input',
+                instantsearchPage: function () { return false; },
+              })
+            );
+            search.addWidget(
+              instantsearch.widgets.hits({
+                container: '#hits',
+                templates: {
+                  item: document.getElementById('hit-template').innerHTML,
+                  empty: "We didn't find any results for the search <em>\"{{query}}\"</em>"
+                }
+              })
+            );
+            search.addWidget(
+              instantsearch.widgets.pagination({
+                container: '#pagination'
+              })
+            );
+            search.start();
+  });
+  </script>
+  <!-- <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script> -->
+
+  <script type="text/html" id="hit-template">
+  <div class = "card-container">
+    <div class="card hit">
+      <div class="card-img-top">
+        <img src="{{images.poster.1.medium.film_image}}">
+        <div class="card-artist"></div>
+      </div>
+      <div class="card-body">
+        <h4 class="card-text">{{film_name}}</h4><br/>
+        <h5 class="card-title">{{images.poster.1.medium.film_image}}</h5>
+        <a href="/concerts/{{id}}" class="card-btn btn btn-primary btn-lg">Voir l'évènement</a>
+      </div>
+    </div>
+  </div>
+  </script>
+</div>

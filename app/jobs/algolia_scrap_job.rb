@@ -8,7 +8,7 @@ class AlgoliaScrapJob < ApplicationJob
     require 'algoliasearch'
     require 'objspace'
 
-    Algolia.init(application_id: '0BOKPT0IXQ', api_key: '...')
+    Algolia.init(application_id: '0BOKPT0IXQ', api_key: 'a15672034080ade0ade37ad607213c83')
 
     index = Algolia::Index.new('LondonFilms')
     index.clear_index
@@ -37,6 +37,9 @@ class AlgoliaScrapJob < ApplicationJob
       http.request(request)
     end
 
-    index.add_objects(response)
+    jsonresponse = JSON.parse(response.body)["films"]
+
+    puts jsonresponse
+    index.add_objects(jsonresponse)
   end
 end

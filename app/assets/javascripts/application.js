@@ -12,5 +12,18 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+//= require jquery3
+//= require jquery_ujs
+//= require popper
+//= require bootstrap
 //= require_tree .
+
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= 50){
+  $('.navbar').addClass('bg-dark');
+
+  }
+  else {
+  $('.navbar').removeClass('bg-dark');
+}
+});

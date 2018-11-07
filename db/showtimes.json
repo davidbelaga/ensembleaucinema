@@ -1,1 +1,58 @@
-"{\"cinema\":{\"cinema_id\":8893,\"cinema_name\":\"Cineworld Leicester Square\"},\"films\":[{\"film_id\":247142,\"film_name\":\"First Man\",\"version_type\":\"Standard\",\"age_rating\":\"12A \",\"film_image\":\"https:\\/\\/d3ltpb4h29tx4j.cloudfront.net\\/247142\\/247142h2.jpg\",\"film_image_height\":200,\"film_image_width\":300,\"showings\":{\"Standard\":{\"film_id\":247142,\"film_name\":\"First Man\",\"times\":[{\"start_time\":\"13:45\",\"end_time\":\"16:28\"},{\"start_time\":\"20:15\",\"end_time\":\"22:58\"},{\"start_time\":\"21:15\",\"end_time\":\"23:58\"}]}},\"show_dates\":[{\"date\":\"2018-10-12\"},{\"date\":\"2018-10-13\"},{\"date\":\"2018-10-14\"}]}],\"count\":1,\"status\":{\"state\":\"OK\",\"code\":1,\"method\":\"cinemaShowTimes\",\"message\":null,\"request_method\":\"GET\",\"version\":\"HHJHv102\",\"auth_type\":\"d\"}}"
+{
+  "cinema": {
+    "cinema_id": 8893,
+    "cinema_name": "Cineworld Leicester Square"
+  },
+  "films": [
+    {
+      "film_id": 247142,
+      "film_name": "First Man",
+      "version_type": "Standard",
+      "age_rating": "12A ",
+      "film_image": "https://d3ltpb4h29tx4j.cloudfront.net/247142/247142h2.jpg",
+      "film_image_height": 200,
+      "film_image_width": 300,
+      "showings": {
+        "Standard": {
+          "film_id": 247142,
+          "film_name": "First Man",
+          "times": [
+            {
+              "start_time": "13:45",
+              "end_time": "16:28"
+            },
+            {
+              "start_time": "20:15",
+              "end_time": "22:58"
+            },
+            {
+              "start_time": "21:15",
+              "end_time": "23:58"
+            }
+          ]
+        }
+      },
+      "show_dates": [
+        {
+          "date": "2018-10-12"
+        },
+        {
+          "date": "2018-10-13"
+        },
+        {
+          "date": "2018-10-14"
+        }
+      ]
+    }
+  ],
+  "count": 1,
+  "status": {
+    "state": "OK",
+    "code": 1,
+    "method": "cinemaShowTimes",
+    "message": null,
+    "request_method": "GET",
+    "version": "HHJHv102",
+    "auth_type": "d"
+  }
+}
